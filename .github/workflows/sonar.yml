@@ -23,8 +23,8 @@ jobs:
 
 Crée `sonar-project.properties` à la racine du repo :
 ```
-sonar.projectKey=ton-nom
-sonar.projectName=ton-nom
+sonar.projectKey=Nicolas Ravelo
+sonar.projectName=Nicolas Ravelo
 sonar.sources=.
 sonar.language=py
 sonar.python.version=3
