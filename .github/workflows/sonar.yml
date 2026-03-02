@@ -1,30 +1,21 @@
 name: SonarQube Analysis
+
 on:
   push:
     branches: [master, main]
   pull_request:
     branches: [master, main]
+
 jobs:
   sonarqube:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-```
-
----
-
-## Étape 6 : Créer le fichier sonar-project.properties
-
-Crée `sonar-project.properties` à la racine du repo :
-```
-sonar.projectKey=Nicolas-Ravelo
-sonar.projectName=Nicolas-Ravelo
-sonar.sources=.
-sonar.language=py
-sonar.python.version=3
